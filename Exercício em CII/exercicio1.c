@@ -123,9 +123,11 @@ int main () {
 	
 	/*----- Exercicio Vetores */
 	
+	/*
 	 int num[5];
 	 int cont;
 	 int sum=0;
+	*/
 	
 	/* 
 	 num[0]=10;
@@ -162,7 +164,7 @@ int main () {
 	
 	/* -------- Exercicio Vetores ---- */
 	
-	
+	/*
 	for(cont=0; cont<5; cont++){
 		printf("Digite o %dº Valor: ", cont+1);
 		scanf("%d", &num[cont]);
@@ -179,8 +181,34 @@ int main () {
 	printf("---------------------------------------\n\n");
 	
 	printf("A soma dos vetores é: %d\n\n", sum);
+	*/
 	
-			
+	/* -------- Exercicio Vetores ---- */
+	
+	int lanc [10];
+	int res [7] = {0};
+	int i;
+	
+	for (i=0; i<10; i++){
+		printf("Digite o %dº numero", i+1);
+		scanf("%d", &lanc[i]);
+	}
+	
+	/*
+	for (i=0; i<10; i++){
+		printf("lanc[%d] = %d\n\n",i ,lanc[i]);
+	}*/
+	
+	for (i=0; i<10; i++){
+		res[lanc[i]]++;
+	}
+
+	for (i=0; i<7; i++){
+		printf("res[%d] = %d\n",i ,res[i]);
+	}
+	
+	
+		
 	system("pause");
 	return 0;
 }

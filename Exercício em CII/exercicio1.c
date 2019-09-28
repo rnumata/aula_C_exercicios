@@ -185,6 +185,7 @@ int main () {
 	
 	/* -------- Exercicio Vetores ---- */
 	
+	/*
 	int lanc [10];
 	int res [7] = {0};
 	int i;
@@ -194,19 +195,72 @@ int main () {
 		scanf("%d", &lanc[i]);
 	}
 	
-	/*
-	for (i=0; i<10; i++){
-		printf("lanc[%d] = %d\n\n",i ,lanc[i]);
-	}*/
 	
 	for (i=0; i<10; i++){
-		res[lanc[i]]++;
+		++res[lanc[i]];
 	}
 
 	for (i=0; i<7; i++){
 		printf("res[%d] = %d\n",i ,res[i]);
 	}
+	*/
 	
+	/* -------- Exercicio Vetores ---- 
+	
+	int mat [3];
+	int nMat, i;
+	
+	for (i=0; i<3; i++){
+		printf("Digite a %dª Matrícula\n", i+1);
+		scanf("%d", &mat[i]);
+	}
+	
+	printf("Qual Matricula a ser consultada?\n\n");
+	scanf("%d", &nMat);
+	
+	/* Primeira opção 
+	for(i=0; i<3; i++){
+		if(mat[i] == nMat){
+			break;
+		}
+	}
+	
+	if(i == 3){
+		printf("Aluno NÃO Matriculado\n");
+	} else {
+		printf("Aluno Matriculado\n");
+	}
+	*/
+	
+	/* Segunda Opção 
+	for(i=0; i<3; i++){
+		if(mat[i] == nMat){
+			break;
+		}
+	}
+	
+	if(i == 3){
+		printf("Aluno NÃO Matriculado\n");
+	} else {
+		printf("Aluno Matriculado\n");
+	}
+	*/
+	
+	/* -------- Exercicio Matrizes ----*/ 
+	
+	int l, c, tot1 = 0 ;
+	int matriz1 [5][3];
+	int matriz2 [5][3];
+	int matriz3 [5][3];
+	
+	for(l=0; l<5; l++){
+		for(c=0; c<3; c++){
+			printf("Digite o valor:");
+			scanf("%d", &matriz1[l][c]);
+			tot1 = tot1 + matriz1[l][c];
+		}
+		
+	}
 	
 		
 	system("pause");

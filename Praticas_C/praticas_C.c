@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include<locale.h>
 
+// prototipo de função
+int linearsearch(int a[], int key, int size);
+
 /*
  * 
  */
@@ -251,13 +254,13 @@ int main() {
 	*/
 	
 	/* -------- Exercicio Matrizes ----*/ 
-	
+	/*
 	int l, c, tot1 = 0, tot2 = 0 ;
 	int matriz1 [5][3];
 	int matriz2 [5][3];
 	int matriz3 [5][3];
 	
-        /* Popular 1a Matriz */
+        // Popular 1a Matriz 
 	for(l=0; l<5; l++){
             for(c=0; c<3; c++){
 		printf("Matriz 1 %da Linha e %da Coluna:", l+1, c+1);
@@ -267,7 +270,7 @@ int main() {
 	}
         printf("*************************************\n");
         
-        /* Popular 2a Matriz */        
+        // Popular 2a Matriz         
         for(l=0; l<5; l++){
             for(c=0; c<3; c++){
 		printf("Matriz 2 %da Linha e %da Coluna:", l+1, c+1);
@@ -276,7 +279,7 @@ int main() {
 		}	
 	}
         
-        /* Popular 3a Matriz */
+        // Popular 3a Matriz 
         for(l=0; l<5; l++){
             for(c=0; c<3; c++){
                 matriz3 [l][c] = matriz1[l][c] + matriz2[l][c];
@@ -313,11 +316,42 @@ int main() {
         }
         
         printf("\n");
-		
+        */
 	
+    /* -------- Exercicio Array (encontrar valor no vetor) ----*/ 
+    /*
+    int a[] = {2, 4, 6, 8, 10};
+    int x, searchkey, element;
+    
+    printf("Digite o valor: \n");
+    scanf("%d",&searchkey);
+    
+    element = linearsearch (a, searchkey, 5);
+    
+    if(element != 0){
+        printf("Valor %d encontrado na lista\n", element);
+    }else{
+        printf("Valor NÃO encontrado na lista");
+    }
+    */
+    
+    
     
     
     return (0);
     system("pause");
 }
 
+
+//Definição das funçoes
+
+int linearsearch(int a[], int key, int size){
+    int n;
+    
+    for(n=0; n < size; ++n){
+        if(a[n] == key){
+            return key;
+        }
+    }
+    return 0;
+}

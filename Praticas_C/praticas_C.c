@@ -2,9 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<locale.h>
+#include<string.h>
 
 // prototipo de funÃ§Ã£o
 int linearsearch(int a[], int key, int size);
+
+
+// Definição de Struct
+
+struct imovel {
+    	int cadastro;
+    	float vlrImposto;
+    	int qtdeAtraso;
+    	float vlrMulta;
+	};
+
 
 /*
  * 
@@ -264,8 +276,8 @@ int main() {
 	for(l=0; l<5; l++){
             for(c=0; c<3; c++){
 		printf("Matriz 1 %da Linha e %da Coluna:", l+1, c+1);
-                scanf("%d", &matriz1[l][c]);
-		tot1 = tot1 + matriz1[l][c];
+            scanf("%d", &matriz1[l][c]);
+			tot1 = tot1 + matriz1[l][c];
 		}	
 	}
         printf("*************************************\n");
@@ -274,8 +286,8 @@ int main() {
         for(l=0; l<5; l++){
             for(c=0; c<3; c++){
 		printf("Matriz 2 %da Linha e %da Coluna:", l+1, c+1);
-                scanf("%d", &matriz2[l][c]);
-		tot2 = tot2 + matriz2[l][c];
+            scanf("%d", &matriz2[l][c]);
+			tot2 = tot2 + matriz2[l][c];
 		}	
 	}
         
@@ -316,7 +328,8 @@ int main() {
         }
         
         printf("\n");
-        */
+     */   
+         
 	
     /* -------- Exercicio Array (encontrar valor no vetor) ----*/ 
     /*
@@ -331,9 +344,82 @@ int main() {
     if(element != 0){
         printf("Valor %d encontrado na lista\n", element);
     }else{
-        printf("Valor NÃƒO encontrado na lista");
+        printf("Valor NÃO encontrado na lista");
     }
     */
+    
+    /* -------- Exercicio Matrizes exercicio 14 ----*/ 
+    /*
+    int l, c;
+	int matriz [5][3];
+
+    // Popular a Matriz
+    
+    for(l=0; l<5; l++){
+    	for(c=0; c<3; c++){
+    		printf("Informe a nota %d da disciplina %d: \n ", l, c);
+    		scanf("%d", &matriz[l][c]);
+		}
+	}
+   */ 
+   
+        
+    /* ----------- String em C -------- */
+    /*
+     char strTeste [20];
+
+	printf("Informe seu nome");
+	gets(strTeste);				// comando para ler string
+	printf("%s", strTeste);    // imprime o vetor de char strTeste
+    printf("%c", strTeste[5]); // imprime a posição 5
+    */
+    
+    
+    /*---------- Exercicio Struct-------------- */
+    /*
+    float multa = 50;
+    float vlrTotal;
+    
+    struct imovel imovel;
+    
+    fflush(stdin);
+    printf("Informe Nº do Imovel:  ");
+    scanf("%d", &imovel.cadastro);
+    
+    fflush(stdin);
+    printf("Informe o Valor do imposto R$:  ");
+    scanf("%f", &imovel.vlrImposto);
+    
+    fflush(stdin);
+    printf("Informe a qtde de meses em atraso:  ");
+    scanf("%d", &imovel.qtdeAtraso);
+        
+    imovel.vlrMulta = multa * imovel.qtdeAtraso;
+    printf("\n\n O Valor da Multa é R$: %.2f\n\n", imovel.vlrMulta);
+    
+    vlrTotal = imovel.vlrMulta + imovel.vlrImposto;
+    printf("\n\n O Valor da Multa + Imposto é R$: %.2f\n\n", vlrTotal);
+    */
+    
+    /*---------- Exercicio Struct-------------- */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -341,6 +427,8 @@ int main() {
     return (0);
     system("pause");
 }
+
+
 
 
 //DefiniÃ§Ã£o das funÃ§oes

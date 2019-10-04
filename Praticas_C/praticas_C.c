@@ -4,6 +4,8 @@
 #include<locale.h>
 #include<string.h>
 
+
+
 // prototipo de fun√ß√£o
 int linearsearch(int a[], int key, int size);
 
@@ -401,12 +403,42 @@ int main() {
     printf("\n\n O Valor da Multa + Imposto È R$: %.2f\n\n", vlrTotal);
     */
     
-    /*---------- Exercicio Struct-------------- */
+    
+    /*---------- Exercicio Struct Aula pratica 7-------------- */
+        
+    float multa = 50;
+    float vlrTotalImovel = 0, vlrTotal = 0;
+    int i;
+    
+    struct imovel imovel[5];
     
     
+    for(i=0; i < 5; i++){
+    
+		fflush(stdin);
+	    printf("Informe N∫ do Imovel:  ");
+	    scanf("%d", &imovel[i].cadastro);
+	    
+	    fflush(stdin);
+	    printf("Informe o Valor do imposto R$:  ");
+	    scanf("%f", &imovel[i].vlrImposto);
+	    
+	    fflush(stdin);
+	    printf("Informe a qtde de meses em atraso:  ");
+	    scanf("%d", &imovel[i].qtdeAtraso);
+	        
+	    imovel[i].vlrMulta = multa * imovel[i].qtdeAtraso;
+	    printf("\n\n O Valor da Multa È R$: %.2f\n", imovel[i].vlrMulta);
+	    
+	    vlrTotalImovel = imovel[i].vlrMulta + imovel[i].vlrImposto;
+  	    printf("O Valor da Multa + Imposto È R$: %.2f\n\n", vlrTotalImovel);
+  	    
+  	    vlrTotal = vlrTotal + vlrTotalImovel;
+    	
+	}
     
     
-    
+   	printf("O Valor Total de imposto dos imÛveis È R$: %.2f", vlrTotal);
     
     
     

@@ -10,7 +10,8 @@
 int linearsearch(int a[], int key, int size);
 
 
-// Definição de Struct
+// Definiï¿½ï¿½o de Struct
+// Aula PrÃ¡tica Struct Ex 02
 
 struct imovel {
     	int cadastro;
@@ -19,10 +20,14 @@ struct imovel {
     	float vlrMulta;
 	};
 
+struct funcionario {
+    int codigo;
+    char nome [10];
+    float sal_mes [12];
+    float sal_ano;   
+};       
 
-/*
- * 
- */
+                
 int main() {
     setlocale(LC_ALL,"");
 	
@@ -346,7 +351,7 @@ int main() {
     if(element != 0){
         printf("Valor %d encontrado na lista\n", element);
     }else{
-        printf("Valor NÃO encontrado na lista");
+        printf("Valor Nï¿½O encontrado na lista");
     }
     */
     
@@ -373,11 +378,11 @@ int main() {
 	printf("Informe seu nome");
 	gets(strTeste);				// comando para ler string
 	printf("%s", strTeste);    // imprime o vetor de char strTeste
-    printf("%c", strTeste[5]); // imprime a posição 5
+    printf("%c", strTeste[5]); // imprime a posiï¿½ï¿½o 5
     */
     
     
-    /*---------- Exercicio Struct-------------- */
+    /*---------- Aula Pratica Struct Ex 02-------------- */
     /*
     float multa = 50;
     float vlrTotal;
@@ -385,7 +390,7 @@ int main() {
     struct imovel imovel;
     
     fflush(stdin);
-    printf("Informe Nº do Imovel:  ");
+    printf("Informe Nï¿½ do Imovel:  ");
     scanf("%d", &imovel.cadastro);
     
     fflush(stdin);
@@ -397,15 +402,15 @@ int main() {
     scanf("%d", &imovel.qtdeAtraso);
         
     imovel.vlrMulta = multa * imovel.qtdeAtraso;
-    printf("\n\n O Valor da Multa é R$: %.2f\n\n", imovel.vlrMulta);
+    printf("\n\n O Valor da Multa ï¿½ R$: %.2f\n\n", imovel.vlrMulta);
     
     vlrTotal = imovel.vlrMulta + imovel.vlrImposto;
-    printf("\n\n O Valor da Multa + Imposto é R$: %.2f\n\n", vlrTotal);
+    printf("\n\n O Valor da Multa + Imposto ï¿½ R$: %.2f\n\n", vlrTotal);
     */
     
     
     /*---------- Exercicio Struct Aula pratica 7-------------- */
-        
+    /*    
     float multa = 50;
     float vlrTotalImovel = 0, vlrTotal = 0;
     int i;
@@ -416,7 +421,7 @@ int main() {
     for(i=0; i < 5; i++){
     
 		fflush(stdin);
-	    printf("Informe Nº do Imovel:  ");
+	    printf("Informe Nï¿½ do Imovel:  ");
 	    scanf("%d", &imovel[i].cadastro);
 	    
 	    fflush(stdin);
@@ -428,22 +433,135 @@ int main() {
 	    scanf("%d", &imovel[i].qtdeAtraso);
 	        
 	    imovel[i].vlrMulta = multa * imovel[i].qtdeAtraso;
-	    printf("\n\n O Valor da Multa é R$: %.2f\n", imovel[i].vlrMulta);
+	    printf("\n\n O Valor da Multa ï¿½ R$: %.2f\n", imovel[i].vlrMulta);
 	    
 	    vlrTotalImovel = imovel[i].vlrMulta + imovel[i].vlrImposto;
-  	    printf("O Valor da Multa + Imposto é R$: %.2f\n\n", vlrTotalImovel);
+  	    printf("O Valor da Multa + Imposto ï¿½ R$: %.2f\n\n", vlrTotalImovel);
   	    
   	    vlrTotal = vlrTotal + vlrTotalImovel;
     	
 	}
     
     
-   	printf("O Valor Total de imposto dos imóveis é R$: %.2f", vlrTotal);
+   	printf("O Valor Total de imposto dos imï¿½veis ï¿½ R$: %.2f", vlrTotal);
+    */
+    
+    
+   
+/*---------- Exercicio vetor com struct-------------- */    
+    
+    struct funcionario func [2];
+    int i, s, cod;
+   
+    // Popular um registro
+    for(i=0; i<2; i++){
+        
+        func[i].sal_ano = 0;  //zera o sal_ano para o loop
+
+        printf("Digite cÃ³digo: ");
+        scanf("%d", &func[i].codigo);
+        
+        printf("Digite Nome: ");
+        scanf("%s", &func[i].nome);
+
+        // Popular os 12 salarios
+        for(s=0; s<12; s++){   
+            printf("Digite o %do salario: ", s+1 );
+            fflush(stdin);
+            scanf("%f", &func[i].sal_mes[s]);
+            func[i].sal_ano = func[i].sal_ano + func[i].sal_mes[s];
+        }
+        system("clear");    
+    }   
+    system("clear");
+    
+    // Imprimir os registros
+    for(i=0; i<2; i++){   
+        printf("Codigo => %d\n", func[i].codigo);
+        printf("Nome => %s\n", func[i].nome);
+        
+        for(s=0; s<12; s++){
+            printf("Salario %do mes => %.2f\n", s+1, func[i].sal_mes[s]);
+        }
+        printf("Salario Ano => %.2f\n\n", func[i].sal_ano);   
+    }
+   
+    // Procurar um cÃ³digo nos registros
+    printf("Qual cadastro deseja consultar? ");
+    scanf("%d", &cod);
+    
+    for(i=0; i<2; i++){
+        if(func[i].codigo == cod){
+            printf("CÃ³digo %d Cadastrado", cod);
+            break;
+        } else {
+            printf("CÃ³digo NÃƒO cadastrado");
+            break;
+        }
+    }
     
     
     
     
+   /*---------- Matriz While -------------------------------------------------- */  
+/*
+    char resp [1];
     
+    printf("Deseja Cadastrar? S/N ");
+    fflush(stdin);
+    scanf("%s", &resp);
+    
+    while (resp[0] == 's' || resp[0] == 'S'){
+          
+        
+        printf("Deseja Cadastrar? S/N ");
+        scanf("%s", &resp);        
+    }
+*/    
+    
+    
+    /*---------- Exercicio revisÃ£o ------------------ */ 
+/*    
+    int codTime, i, contTime = 0, contLoop = 0;
+    char nome [5];
+    int idade;
+    float mediaIdade;
+    char resp [1];
+    
+    printf("Deseja Cadastrar? S/N ");
+    fflush(stdin);
+    scanf("%s", &resp);
+    
+    while (resp[0] == 's' || resp[0] == 'S'){
+        
+        printf("Digite o cÃ³digo do time: ");
+        scanf("%d", &codTime);
+        
+        mediaIdade = 0;
+        contLoop = 0;
+        
+        for(i=0; i<3; i++){
+        printf("Digite o Nome: ");
+        scanf("%s", &nome);
+        printf("Digite a Idade: ");
+        scanf("%d", &idade);
+        mediaIdade = mediaIdade + idade;
+        contLoop = contLoop + 1;
+        }
+        
+        printf("A Media de idade Ã© %.2f\n", (mediaIdade/contLoop));
+        
+        contTime = contTime + 1;
+       
+        printf("\nDeseja Cadastrar? S/N ");
+        scanf("%s", &resp);        
+    }
+    
+    printf("\nForam cadastrados %d time(s)", contTime);
+    
+*/    
+    
+    /*---------- Exercicio revisÃ£o ------------------ */ 
     
     
     
@@ -462,7 +580,7 @@ int main() {
 
 
 
-
+// Linha 341
 //DefiniÃ§Ã£o das funÃ§oes
 
 int linearsearch(int a[], int key, int size){

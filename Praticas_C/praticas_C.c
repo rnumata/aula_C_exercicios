@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include<locale.h>
@@ -26,6 +25,15 @@ struct funcionario {
     float sal_mes [12];
     float sal_ano;   
 };       
+
+
+	/*---------- C5 (f) Funções - Aula Prática - Ex 01 02 ------------------ */ 
+	void hello();
+	void by();
+
+	/*---------- C5 (f) Funções - Aula Prática - Ex 03 04 ------------------ */ 
+	int mult();
+
 
                 
 int main() {
@@ -449,7 +457,7 @@ int main() {
     
    
 /*---------- Exercicio vetor com struct-------------- */    
-    
+/*    
     struct funcionario func [2];
     int i, s, cod;
    
@@ -499,10 +507,8 @@ int main() {
             break;
         }
     }
-    
-    
-    
-    
+*/    
+ 
    /*---------- Matriz While -------------------------------------------------- */  
 /*
     char resp [1];
@@ -561,14 +567,17 @@ int main() {
     
 */    
     
-    /*---------- Exercicio revisÃ£o ------------------ */ 
+    /*---------- C5 (f) Funções - Aula Prática - Ex 01 02 ------------------ */ 
+/*    
+    hello ();
+    by ();
+*/    
     
+    /*---------- C5 (f) Funções - Aula Prática - Ex 03 04 ------------------ */ 
     
-    
-    
-    
-    
-    
+    int res = 0;
+    res = mult();
+    printf("O Resultado é %d", res);
     
     
     
@@ -593,3 +602,23 @@ int linearsearch(int a[], int key, int size){
     }
     return 0;
 }
+
+	/*---------- C5 (f) Funções - Aula Prática - Ex 01 02 ------------------ */ 
+
+	void hello (){
+		printf("Meu primeiro programa em C!\n");
+	}
+
+	void by (){
+		printf("Encerrando meu primeiro programa em C!\n");
+	}
+	
+	
+	/*---------- C5 (f) Funções - Aula Prática - Ex 03 04 ------------------ */ 
+	
+	int mult () {
+		int res = 9 * 10;
+		return res;
+	}
+	
+

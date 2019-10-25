@@ -28,11 +28,20 @@ struct funcionario {
 };       
 
 
-/*---------- C5 Aula Pratica Modularizacao Ex 01 e 03 ---------- */
+/*---------- C5 Aula Pratica Modularizacao ---------- */
 
 void ola ();
 
 int mult (int x, int y);
+
+float multf ();
+
+int soma();
+int num1, num2;  //declaracao de variaveis como global
+
+int quad(int x);
+
+int soma12(int pn_1, int pn_2);
 
                 
 int main() {
@@ -581,6 +590,58 @@ int main() {
     */
     
     
+    /*---------- C5 Aula Pratica Modularizacao Ex 07 a 9 ---------- */
+    
+    /*
+    float resf;
+    resf = multf();
+    printf("O produto do float é: %.2f", resf);
+    */
+    
+    
+    /*---------- C5 Aula Pratica Modularizacao Ex 10 a 11 ---------- */
+    
+    /*
+    int res;
+    
+    printf("--- Soma ---\n");
+    
+    printf("Informe o 1o numero: ");
+    scanf("%d", &num1);
+    
+    printf("Informe o 2o numero: ");
+    scanf("%d", &num2);
+    
+    res = soma();
+    printf("O Valor da soma é: %d", res);
+    */
+    
+    /*---------- C5 Aula Pratica Modularizacao Ex 12 ao 15 ---------- */
+    
+    /*
+    int num, quadrado; 
+    printf("Informe o numero: ");
+    scanf("%d", &num);
+    //quadrado = quad(num);
+    printf("O quadrado de %d é %d", num, quad(num));
+    */
+    
+    
+    /*---------- C5 Aula Pratica Modularizacao Ex 16 ao 18 ---------- */
+    
+    /*
+    int num1, num2, res;
+    
+    printf("--- Soma ---\n");
+    printf("Informe 1o Numero: ");
+    scanf("%d", &num1);
+    printf("Informe 2o Numero: ");
+    scanf("%d", &num2);
+    res = soma12(num1, num2);
+    printf("A somatoria de %d + %d -> %d", num1, num2, res);
+    */
+    
+    /*---------- C5 Aula Pratica Modularizacao Ex 19 ---------- */
     
     
     
@@ -615,4 +676,29 @@ void ola() {
 int mult(int x, int y){
     int res = x * y;
     return res;
+}
+
+float multf(){
+    float resf = 5000.0 * 9 / 100;
+    return resf;
+}
+
+int soma(){
+    int valor;
+    valor = num1 + num2;
+    return valor;
+}
+
+int quad(int x){
+    int quadrado;
+    quadrado = x * x;
+    return quadrado;
+}
+
+int soma12(int pn_1, int pn_2){
+    int valor;
+    valor = pn_1 + pn_2;
+    pn_1 = 0;
+    pn_2 = 0;
+    return valor;
 }

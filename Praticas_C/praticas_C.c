@@ -43,6 +43,21 @@ int quad(int x);
 
 int soma12(int pn_1, int pn_2);
 
+
+/*---------- C8 Aula Pratica Recursividade ---------- */
+
+void conta(int x);
+
+void conta2(int y);
+
+
+/*---------- C5 Aula Pratica Modularizacao Ex do pdf ---------- */
+
+int somaproduto (int p_num1, int p_num2, int *soma, int *produto);
+
+
+
+
                 
 int main() {
     setlocale(LC_ALL,"");
@@ -641,9 +656,38 @@ int main() {
     printf("A somatoria de %d + %d -> %d", num1, num2, res);
     */
     
-    /*---------- C5 Aula Pratica Modularizacao Ex 19 ---------- */
+    /*---------- C5 Aula Pratica Modularizacao Ex do pdf ---------- */
     
     
+    int num1, num2, soma=0, produto=0, resultado;
+    
+    printf("Informe o 1o numero: ");
+    scanf("%d", &num1);
+    
+    printf("Informe o 2o numero: ");
+    scanf("%d", &num2);
+    
+    somaproduto(num1, num2, &soma, &produto);
+    
+    printf("Soma => %d\n", soma);
+    printf("Produto = %d\n", produto);
+    
+    
+    
+    
+    
+    /*---------- C8 Aula Pratica Recursividade Ex 1 ---------- */
+    
+    /*
+    int num;
+    
+    printf("Informe o numero de vezes a ser impresso: ");
+    fflush(stdin);
+    scanf("%d", &num);
+    
+    conta(num);
+    conta2(num);
+    */
     
     
     
@@ -701,4 +745,27 @@ int soma12(int pn_1, int pn_2){
     pn_1 = 0;
     pn_2 = 0;
     return valor;
+}
+
+void conta(int x){
+    
+    if(x > 0){
+        conta(x-1); 
+    }
+        printf("> %d\n", x);
+}
+
+void conta2(int y){
+    
+    if(y > 0){
+        printf("=> %d\n", y);
+    }
+        conta2(y-1);
+    
+}
+
+int somaproduto (int p_num1, int p_num2, int *soma, int *produto){
+    
+    *soma = p_num1 + p_num2;
+    *produto = p_num1 * p_num2;
 }

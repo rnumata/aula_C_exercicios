@@ -658,7 +658,7 @@ int main() {
     
     /*---------- C5 Aula Pratica Modularizacao Ex do pdf ---------- */
     
-    
+    /*
     int num1, num2, soma=0, produto=0, resultado;
     
     printf("Informe o 1o numero: ");
@@ -671,11 +671,9 @@ int main() {
     
     printf("Soma => %d\n", soma);
     printf("Produto = %d\n", produto);
+    */
     
-    
-    
-    
-    
+      
     /*---------- C8 Aula Pratica Recursividade Ex 1 ---------- */
     
     /*
@@ -690,7 +688,40 @@ int main() {
     */
     
     
+    /*---------- C7 Aula Pratica Ponteiros Ex 1---------- */
     
+    /*
+    int num,*p;
+    
+	num=55; 
+
+	p=&num; // Pega o endereco de num 
+	printf ("\nValor inicial: %d\n",num);
+	*p=100; // Muda o valor de num de uma maneira indireta 
+	printf ("\nValor final: %d\n",num); 
+    */
+    
+    
+    /*---------- C7 Aula Pratica Ponteiros Ex 2---------- */
+    
+	int x;
+ 	int *p1, *p2, *p3;
+ 	x = 101;
+
+ 	p1 = &x;
+ 	p2 = p1; 
+ 	p3 = p1;
+	
+	printf("p1 aponta para %p ", p1); //imprime o endereço de x
+ 	printf(" que possui o valor %d \n", *p1); //imprime o endereço de x
+
+ 	printf("p2 aponta para %p ", p2); //imprime o endereço de x
+ 	printf(" que possui o valor %d \n", *p2); //imprime o endereço de x 
+
+	printf("p2 aponta para %p ", p3); //imprime o endereço de x
+ 	printf(" que possui o valor %d \n", *p3); //imprime o endereço de x 
+	
+	
     
     return (0);
     system("pause");

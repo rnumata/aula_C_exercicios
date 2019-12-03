@@ -57,6 +57,30 @@ int somaproduto (int p_num1, int p_num2, int *soma, int *produto);
 
 
 
+/*---------- C7 Trabalho de Fila ---------- */
+
+//  Funï¿½ï¿½o que retorna 1 em caso de Fila Cheia e 0 em caso de inclusï¿½o Ok                  
+int inclui(int *p_ultimo, int p_Fila[10], int p_valor);  // p_ultimo - parï¿½metro que define a posiï¿½ï¿½o do ï¿½ltima elemento da Fila (primeira vaga)
+                                                         //            esse valor ï¿½ passado por referï¿½ncia pois o mesmo ï¿½ alterado com a incluï¿½o de um elemento            
+
+                                                         // p_Fila   - Fila na qual o conteï¿½do (p_valor) serï¿½ incluï¿½do
+                                                         //            esse valor ï¿½ passado por referï¿½ncia pois o mesmo ï¿½ alterado              
+
+                                                         // p_valor  - valor a ser inserido na fila 
+
+
+// Funï¿½ï¿½o que mostra os elementos da Fila 
+void mostra(int p_ultimo, int p_Fila[10]);              // p_ultimo - parï¿½metro que define a ï¿½ltima posiï¿½ï¿½o elemento da Fila (primeira vaga)
+
+
+//  Funï¿½ï¿½o que retorna o Primeiro elemento da Fila, caso exista OU - caso a lista esteja VAZIA                  
+int exclui(int *p_ultimo, int p_Fila[10]);              // p_ultimo - parï¿½metro que define a ï¿½ltima posiï¿½ï¿½o elemento da Fila (primeira vaga)
+                                                        //            esse valor ï¿½ passado por referï¿½ncia pois o mesmo ï¿½ alterado com a retirada do elemento               
+
+                                                        // p_Fila   - Fila na qual o conteï¿½do (p_valor) serï¿½ incluï¿½do
+
+
+
 
                 
 int main() {
@@ -673,7 +697,6 @@ int main() {
     printf("Produto = %d\n", produto);
     */
     
-      
     /*---------- C8 Aula Pratica Recursividade Ex 1 ---------- */
     
     /*
@@ -688,40 +711,85 @@ int main() {
     */
     
     
-    /*---------- C7 Aula Pratica Ponteiros Ex 1---------- */
+    /*---------- C7 Trabalho de Fila ---------- */
     
-    /*
-    int num,*p;
     
-	num=55; 
+   int Fila[10];
+   int op;        // Opï¿½ï¿½o do parï¿½metro
+   int valor;     // Valor a ser incluï¿½do / retirado da Fila. Se valor = -1, significa fila vazia   
+   int ultimo;   // Variï¿½vel que define a ï¿½ltima posiï¿½ï¿½o da Fila (primeira vaga)   
+   int res;      // Recebe o retorno do resultado das funï¿½ï¿½es inclui
+                 // funï¿½ï¿½o inclui 1 - Fila Cheia    0 - Inclusï¿½o OK
+    
+   printf("----------------------------------\n");
+   printf("1 - Incluir\n");
+   printf("2 - Retirar\n");   
+   printf("3 - Listar \n");      
+   printf("4 - Sair \n");         
+   printf("----------------------------------\n");   
+   
+   printf("Informe uma opï¿½ï¿½o para Fila: ");
+   scanf("%d", &op);
+   
+   ultimo = 0;   // Fila VAZIA   
+   
+   while (op != 4) {
+         
+      switch (op) {
+      
+         case 1:  // Inclui
+  
+            printf("Informe o valor a ser incluido na fila: ");
+            scanf("%d", &valor);
+            
+            res = inclui(&ultimo, Fila, valor);
+            
+            if (res == 1) {  // Se retornar 1, Fila Cheia
+               printf("Fila CHEIA");
+            }
+            else { 
+               printf("Valor %d incluido na Fila \n", valor);
+            }
+            break;
+         
+         case 2: // Exclui
+            valor = exclui(&ultimo, Fila);
+            if (valor == -1){                // Se retornar -1, Fila Vazia
+               printf("Lista Vazia");
+            }
+            else{
+               printf ("O elemento retirado da Fila foi o %d\n", valor);
+            }                          
+            break;
 
-	p=&num; // Pega o endereco de num 
-	printf ("\nValor inicial: %d\n",num);
-	*p=100; // Muda o valor de num de uma maneira indireta 
-	printf ("\nValor final: %d\n",num); 
-    */
+         case 3:  // Mostra
+            mostra(ultimo, Fila);
+            break;
+
+         default:
+            printf("INVALIDO \n");
+
+     }
+
+      printf("\n\n----------------------------------\n");
+      printf("1 - Incluir\n");
+      printf("2 - Retirar\n");   
+      printf("3 - Listar \n");      
+      printf("4 - Sair \n");         
+      printf("----------------------------------\n");   
+   
+      printf("Informe uma opï¿½ï¿½o para Fila: ");
+      scanf("%d", &op);
+
+         
+   }
     
     
-    /*---------- C7 Aula Pratica Ponteiros Ex 2---------- */
     
-	int x;
- 	int *p1, *p2, *p3;
- 	x = 101;
-
- 	p1 = &x;
- 	p2 = p1; 
- 	p3 = p1;
-	
-	printf("p1 aponta para %p ", p1); //imprime o endereço de x
- 	printf(" que possui o valor %d \n", *p1); //imprime o endereço de x
-
- 	printf("p2 aponta para %p ", p2); //imprime o endereço de x
- 	printf(" que possui o valor %d \n", *p2); //imprime o endereço de x 
-
-	printf("p2 aponta para %p ", p3); //imprime o endereço de x
- 	printf(" que possui o valor %d \n", *p3); //imprime o endereço de x 
-	
-	
+    
+    
+    
+    
     
     return (0);
     system("pause");
@@ -799,4 +867,44 @@ int somaproduto (int p_num1, int p_num2, int *soma, int *produto){
     
     *soma = p_num1 + p_num2;
     *produto = p_num1 * p_num2;
+}
+
+int inclui(int *p_ultimo, int p_Fila[10], int p_valor){
+	
+	if(*p_ultimo >= 10){
+		return 1;
+	} else{
+		p_Fila[*p_ultimo] = p_valor;
+		*p_ultimo = *p_ultimo + 1;
+		return 0;
+	}
+	
+}
+
+
+void mostra(int p_ultimo, int p_Fila[10]){
+	int i;
+	
+	for(i = 0; i < p_ultimo; i++){
+		printf("| %d ", p_Fila[i]);	
+	}
+	
+
+} 
+
+
+int exclui(int *p_ultimo, int p_Fila[10]){
+	int i, x;
+	
+	if(*p_ultimo <= 0){
+		return -1;
+	} else{
+		x = p_Fila[0];
+		for (i = 0; i < *p_ultimo; i++){
+			p_Fila[i] = p_Fila[i + 1];	
+		}
+		*p_ultimo = *p_ultimo - 1;
+		return x;
+	}
+
 }
